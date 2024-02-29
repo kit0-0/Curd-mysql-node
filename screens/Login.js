@@ -4,6 +4,7 @@ const {
     Image,
     TextInput,
     TouchableOpacity,
+    ScrollView,
 } = require('react-native');
 import { useNavigation } from '@react-navigation/native';
 import styles from './style';
@@ -18,7 +19,12 @@ function Login({ }) {
     };
 
     return (
-        <View style={styles.mainContainer}>
+        <ScrollView
+            contentContainerStyle={{ flexGrow: 1 }}
+            showsVerticalScrollIndicator={false}
+            //   keyboardShouldPersistTaps={true}
+            style={{ backgroundColor: 'white' }}>
+            <View>
             <View style={styles.logoContainer}>
                 <Image
                     style={styles.logo}
@@ -64,6 +70,7 @@ function Login({ }) {
             </View>
 
         </View>
+        </ScrollView>
     );
 }
 export default Login;
